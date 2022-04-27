@@ -1,0 +1,32 @@
+<section id="convert" class="about">
+    <form class="formulario">
+        <div class="form-row">
+            <div class="col">
+                <input class="form-control me-2" type="search" placeholder="Buscar una moneda" [(ngModel)]="search" name="search">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </form>
+
+    <table *ngIf="listaCurrencies" class='table table-striped' aria-labelledby="tableLabel">
+        <thead>
+            <tr>
+                <th>Lista de Monedas</th>
+                <th></th>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th>Codigo de Moneda</th>
+                <th>Ratio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listaCurrencies | search: 'monedaDestino': search ">
+                <td>  {{item.monedaDestino}}</td>
+                <td>  {{item.conversion * numero | number : '1.2-2' }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

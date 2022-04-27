@@ -1,0 +1,17 @@
+﻿@model List<Moneda>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="database" style="color:black; font-size:18px;">
+    <h2>Base de datos</h2>
+    <br/>
+    <h4>Listado de monedas:</h4>
+
+    @foreach (var moneda in Model)
+    {
+        <p> @moneda.NomMoneda</p>
+    }
+
+</div>
+

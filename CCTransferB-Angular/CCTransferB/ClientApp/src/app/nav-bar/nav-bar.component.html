@@ -1,0 +1,27 @@
+<header id="header" class="fixed-top bg-black">
+    <nav>
+        <div class="container d-flex align-items-center justify-content-lg-between">
+            <!-- Logo -->
+            <a [routerLink]="['/home']" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link" [routerLink]="['/home']">Home</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link" [routerLink]="['/conversor']">Conversor</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link" [routerLink]="['/lista']">Lista</a>
+                    </li>
+                    <li class="nav-item" [routerLinkActive]="['link-active']">
+                        <a class="nav-link" [routerLink]="['/about']">Nosotros</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- .navbar -->
+            <a href="#about" class="get-started-btn" [routerLink]="['/conversor']">Conversor</a>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Lista";
+}
+
+<h1>Lista</h1>
+
+
+
+<select id="MonedaOrigen" runat="server">
+    @foreach (var Moneda in Model)
+    {
+        <option value="@Moneda.NomMoneda">@Moneda.NomMoneda</option>
+    }
+</select>
+
+
+<select id="MonedaDestino" runat="server">
+    @foreach (var Moneda in Model)
+    {
+        <option value="@Moneda.NomMoneda">@Moneda.NomMoneda</option>
+        //Restirngir valor de la selleción anterior
+        @*var monedasDestino = (from Moneda in Model
+            where moneda.Nombre != monedaorigen.selecionada
+            select Moneda).ToList();*@
+        @*var ListaAux=from moneda in Model
+            where Moneda.Nombre != monedaorigen.selecionada
+            select Moneda).ToList();*@
+    }
+</select>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label>Id de la moneda</label>
+            </th>
+            <th>
+                <label>Codigo de la moneda</label>
+            </th>
+            <th>
+                <label>Nombre de la moneda</label>
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Moneda in Model)
+        {
+            <tr>
+                <td>
+                    @Moneda.Id
+                </td>
+                <td>
+                    @Moneda.NomMoneda
+                </td>
+                <td>
+                    @Moneda.CodMoneda
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@*<div>
+    <label>Codigo</label>
+    <input type="text" name="CodMoneda" value="" />
+    </div>*@
+
+@*<button id="AceptarSeleccion"
+    onserverclick="Button_Click"
+    runat="server">
+
+    Aceptar Seleccion
+    </button>
+
+
+    <script runat="server">
+
+    void Button_Click (Object sender, EventArgs e)
+    {
+
+    CodMoneda.Text = MonedaOrigen.value;
+
+
+    }
+
+    </script>*@
+
